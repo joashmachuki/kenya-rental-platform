@@ -16,6 +16,7 @@ interface User {
   verification_status: string
   location: string | null
   bio: string | null
+  id_document_url?: string;
 }
 
 interface AuthState {

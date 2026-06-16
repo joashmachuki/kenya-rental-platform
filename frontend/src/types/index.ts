@@ -9,6 +9,7 @@ export interface User {
   location: string | null
   bio: string | null
   created_at: string
+  id_document_url?: string;
 }
 
 export interface Property {
