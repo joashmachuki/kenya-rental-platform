@@ -10,6 +10,10 @@ export interface User {
   bio: string | null
   created_at: string
   id_document_url?: string;
+  verification_status?: string;
+  trust_score?: number;
+  report_count?: number;
+  is_banned?: boolean;
 }
 
 export interface Property {

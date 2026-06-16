@@ -383,7 +383,7 @@ export default function CountyFilterBar({ onFilterChange }: { onFilterChange: (f
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [showCountyDropdown, setShowCountyDropdown] = useState(false);
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<<HTMLDivElement>(null);
 
   const counties = Object.keys(locationData);
 
