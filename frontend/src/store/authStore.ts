@@ -17,6 +17,11 @@ interface User {
   location: string | null
   bio: string | null
   id_document_url?: string;
+  created_at?: string;
+  verification_status?: string;
+  trust_score?: number;
+  report_count?: number;
+  is_banned?: boolean;
 }
 
 interface AuthState {

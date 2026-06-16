@@ -375,7 +375,7 @@ const locationData = {
 
 const propertyTypes = ["All Types","Apartment","Bedsitter","Single Room","Studio","Townhouse","Villa","Commercial","Hostel","Shared"];
 
-export default function CountyFilterBar({ onFilterChange }) {
+export default function CountyFilterBar({ onFilterChange }: { onFilterChange: (filters: any) => void }) {
   const [selectedCounty, setSelectedCounty] = useState(null);
   const [selectedSubcounty, setSelectedSubcounty] = useState(null);
   const [selectedWard, setSelectedWard] = useState(null);
@@ -390,13 +390,13 @@ export default function CountyFilterBar({ onFilterChange }) {
   const subcounties = selectedCounty ? Object.keys(locationData[selectedCounty] || {}) : [];
   const wards = (selectedCounty && selectedSubcounty) ? (locationData[selectedCounty]?.[selectedSubcounty] || []) : [];
 
-  const scroll = (dir) => {
+  const scroll = (dir: "left" | "right") => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: dir === 'left' ? -400 : 400, behavior: 'smooth' });
     }
   };
 
-  const handleCountySelect = (county) => {
+  const handleCountySelect = (county: string) => {
     const newCounty = selectedCounty === county ? null : county;
     setSelectedCounty(newCounty);
     setSelectedSubcounty(null);
@@ -404,12 +404,12 @@ export default function CountyFilterBar({ onFilterChange }) {
     setShowCountyDropdown(false);
   };
 
-  const handleSubcountySelect = (subcounty) => {
+  const handleSubcountySelect = (subcounty: string) => {
     setSelectedSubcounty(subcounty === selectedSubcounty ? null : subcounty);
     setSelectedWard(null);
   };
 
-  const handleWardSelect = (ward) => {
+  const handleWardSelect = (ward: string) => {
     setSelectedWard(ward === selectedWard ? null : ward);
   };
 
