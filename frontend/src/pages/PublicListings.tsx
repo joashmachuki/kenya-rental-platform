@@ -13,7 +13,7 @@ export default function PublicListings() {
   const { properties, searchProperties, favorites, toggleFavorite, isLoading } = usePropertyStore()
   const { isAuthenticated, user } = useAuthStore()
   const [searchQuery, setSearchQuery] = useState('')
-  const [locationFilters, setLocationFilters] = useState<<Record<string, any>>({});
+  const [locationFilters, setLocationFilters] = useState<Record<string, any>>({});
   const [selectedCounty, setSelectedCounty] = useState('')
   const [selectedType, setSelectedType] = useState('')
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200000])
